@@ -9,7 +9,7 @@ const RegisterScreen = () => {
 
   const handleRegister = (user) => {
     // Xử lý khi đăng ký thành công, chuyển đến màn hình Home hoặc màn hình đăng nhập
-    navigation.navigate('Home', { user });
+    navigation.navigate('Login');
   };
 
   return (

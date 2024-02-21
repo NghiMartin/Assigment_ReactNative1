@@ -1,59 +1,83 @@
 import axios from 'axios';
-import { AsyncStorage } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { apiUrl } from '../constants/api';
+import { ToastAndroid } from 'react-native';
 
 const login = async (username, password) => {
   try {
-    const response = await axios.get('http://localhost:3000/account', {
-      params: {
-        username,
-        password,
-      },
+    const response = await axios.post(`${apiUrl}/checkLogin.php`, {
+        username: username,
+        password : password,
     });
-
-    const user = response.data[0];
-
-    if (user) {
-      // Đăng nhập thành công, tạo và trả về token
-      const token = generateToken(); // Thay thế bằng hàm tạo token của bạn
-      await AsyncStorage.setItem('token', token);
-      return token;
+    if (response.status === 200) {
+      console.log('Đăng nhập thành công!');
+      ToastAndroid.showWithGravity(
+        `Đăng nhập thành công!`,
+        ToastAndroid.SHORT,
+        ToastAndroid.CENTER,
+      );
     } else {
-      // Đăng nhập thất bại, trả về null hoặc thông báo lỗi
-      return null;
+      console.error('Xảy ra lỗi khi thêm người dùng.');
     }
+    const user = response.data;
+    console.log(user);
+    return user;
   } catch (error) {
-    console.error('Sign In Failed', error);
-    throw error;
+    checkLogin = false;
+    ToastAndroid.showWithGravity(
+      `Sai tài khoản hoặc mật khẩu, mời bạn nhập lại!`,
+      ToastAndroid.SHORT,
+      ToastAndroid.CENTER,
+    );
   }
   };
   
-
-  const register = async (username, password) => {
+  const register = async (objUser) => {
+    let checkSignUp = false;
     try {
-      const response = await axios.post('http://localhost:3000/account', {
-        username,
-        password,
+      // Gửi yêu cầu POST đến một URL hoặc API cụ thể với dữ liệu của người dùng mới
+      const response = await axios.post(`${apiUrl}/createAccount.php`,objUser, {
+        headers: {
+          accept: 'application/json'
+        }
       });
-  
-      return response.data;
+      // Kiểm tra phản hồi từ máy chủ
+      if (response.status === 200) {
+        console.log('Người dùng đã được thêm thành công!');
+        ToastAndroid.showWithGravity(
+          `Người dùng ${objUser.username} đã được thêm thành công!`,
+          ToastAndroid.SHORT,
+          ToastAndroid.CENTER,
+        );
+        checkSignUp = true;
+      } else {
+        console.error('Xảy ra lỗi khi thêm người dùng.');  
+      }
     } catch (error) {
-      console.error('Sign Up Failed', error);
-      throw error;
+      checkSignUp =false;
+     ToastAndroid.showWithGravity(
+        `Email hoặc username đã có người đăng ký, mời bạn nhập lại!`,
+        ToastAndroid.SHORT,
+        ToastAndroid.CENTER,
+      );
     }
+    return checkSignUp;
   };
-  const jwt = require('jsonwebtoken');
 
-  const generateToken = () => {
-    const secretKey = 'your-secret-key'; // Thay thế bằng secret key của bạn
-    const token = jwt.sign({ data: 'your-data' }, secretKey, { expiresIn: '1h' });
-    return token;
-  };
+  // const jwt = require('jsonwebtoken');
+
+  // const generateToken = () => {
+  //   const secretKey = 'your-secret-key'; // Thay thế bằng secret key của bạn
+  //   const token = jwt.sign({ data: 'your-data' }, secretKey, { expiresIn: '1h' });
+  //   return token;
+  // };
   
-  export { generateToken };
+  // export { generateToken };
   // userApi.js
 const getUserProfile = async (userId) => {
     // Gửi yêu cầu lấy thông tin người dùng từ JSON Server
     // Trả về thông tin người dùng hoặc mã lỗi
+
   };
   export { login,register,getUserProfile };
   

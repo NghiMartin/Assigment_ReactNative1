@@ -1,5 +1,11 @@
 {
-    "account": [
-      { "id": "1", "username": "huy@gmail.com", "password": "huypro123", "token": "ahsidahd%G1oho##*$&)hhuofa2" }
-    ]
+  "account": [
+    {
+      "id": "1",
+      "username": "huy@gmail.com",
+      "phone": "0398298302",
+      "password": "huypro123",
+      "token": "ahsidahd%G1oho##*$&)hhuofa2"
+    }
+  ]
 }

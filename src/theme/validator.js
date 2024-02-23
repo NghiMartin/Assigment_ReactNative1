@@ -18,7 +18,6 @@ export const Validator = {
         }else errorMessage = '';
         setPasswordError(errorMessage);
         return errorMessage;
-
     },
     email: (email, setEmailError) => {
         let errorMessage = '';

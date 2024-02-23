@@ -5,6 +5,10 @@ import {COLORS} from '../theme/theme';
 // import {BlurView} from '@react-native-community/blur';
 import HomeScreen from '../screens/HomeScreen';
 import CustomIcon from '../components/CustomIcon';
+import CartScreen from '../screens/CartScreen';
+import ChangeInfoScreen from '../screens/ChangeInfoScreen';
+import FavoritesScreen from '../screens/FavoritesScreen';
+import ChangePasswordScreen from '../screens/ChangePasswordScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -39,8 +43,8 @@ const TabNavigator = () => {
           ),
         }}></Tab.Screen>
       <Tab.Screen
-        name="Cart"
-        component={HomeScreen}
+        name="ChangeInfor"
+        component={CartScreen}
         options={{
           tabBarIcon: ({focused, color, size}) => (
             <CustomIcon
@@ -54,7 +58,7 @@ const TabNavigator = () => {
         }}></Tab.Screen>
       <Tab.Screen
         name="Favorite"
-        component={HomeScreen}
+        component={FavoritesScreen}
         options={{
           tabBarIcon: ({focused, color, size}) => (
             <CustomIcon
@@ -67,8 +71,8 @@ const TabNavigator = () => {
           ),
         }}></Tab.Screen>
       <Tab.Screen
-        name="History"
-        component={HomeScreen}
+        name="changePassword"
+        component={ChangePasswordScreen}
         options={{
           tabBarIcon: ({focused, color, size}) => (
             <CustomIcon

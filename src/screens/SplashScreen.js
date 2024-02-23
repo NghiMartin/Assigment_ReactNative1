@@ -29,7 +29,7 @@ const SplashScreen = ({ navigation }) => {
 
     // Cleanup: Clear timeout khi component unmount
     return () => clearTimeout(timeoutId);
-  }, [navigation]);
+  }, []);
 
   return (
     <View style={styles.container}>

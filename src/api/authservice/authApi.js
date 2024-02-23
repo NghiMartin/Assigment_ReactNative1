@@ -23,7 +23,6 @@ const login = async (username, password) => {
     console.log(user);
     return user;
   } catch (error) {
-    checkLogin = false;
     ToastAndroid.showWithGravity(
       `Sai tài khoản hoặc mật khẩu, mời bạn nhập lại!`,
       ToastAndroid.SHORT,
@@ -63,7 +62,37 @@ const login = async (username, password) => {
     }
     return checkSignUp;
   };
-
+  const changePassword = async (objUser) => {
+    let checkPass = false;
+    try {
+      // Gửi yêu cầu POST đến một URL hoặc API cụ thể với dữ liệu của người dùng mới
+      const response = await axios.put(`${apiUrl}/changePassword.php`,objUser, {
+        headers: {
+          accept: 'application/json'
+        }
+      });
+      // Kiểm tra phản hồi từ máy chủ
+      if (response.status === 200) {
+        console.log('Đổi mật khẩu thành công!');
+        ToastAndroid.showWithGravity(
+          `Đổi mật khẩu thành công!`,
+          ToastAndroid.SHORT,
+          ToastAndroid.CENTER,
+        );
+        checkPass = true;
+      } else {
+        console.error('Xảy ra lỗi khi thêm người dùng.');  
+      }
+    } catch (error) {
+      checkPass =false;
+     ToastAndroid.showWithGravity(
+        `Mật khẩu không đúng, mời bạn nhập lại!`,
+        ToastAndroid.SHORT,
+        ToastAndroid.CENTER,
+      );
+    }
+    return checkPass;
+  };
   // const jwt = require('jsonwebtoken');
 
   // const generateToken = () => {
@@ -79,6 +108,6 @@ const getUserProfile = async (userId) => {
     // Trả về thông tin người dùng hoặc mã lỗi
 
   };
-  export { login,register,getUserProfile };
+  export { login,register,getUserProfile, changePassword };
   
   

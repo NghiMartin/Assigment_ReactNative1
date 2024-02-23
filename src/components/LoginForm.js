@@ -10,8 +10,11 @@ import { Validator } from '../theme/validator';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { useDispatch } from 'react-redux';
+import { setBeanList, setCoffeeList } from '../store/slice_control';
+import { getAllProduct } from '../api/product/productApi';
 
-const LoginForm = ({ onLogin}) => {
+const LoginForm = ({ onLogin, navigation}) => {
   const [username, setUsername] = useState('');
   console.log(username);
   const [password, setPassword] = useState('');
@@ -19,6 +22,16 @@ const LoginForm = ({ onLogin}) => {
   const [usernameError, setUsernameError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [isCheckRemember, setisCheckRemember] = useState(false);
+
+  const dispatch = useDispatch();
+
+  // const setDataCoffeeList = (arrCoffee) => dispatch(setCoffeeList(arrCoffee));
+  // const setDataBeanList = (arrBean) => dispatch(setBeanList(arrBean));
+  // const setUsers = (users) => dispatch(setUsers(users));
+  // const users = useSelector((state) => state.Products.Users);
+  // console.log(users);
+ 
+
   const getInfor = async () => {
     try {
       const account = await AsyncStorage.getItem('account');
@@ -36,6 +49,7 @@ const LoginForm = ({ onLogin}) => {
   };
   useEffect(() => {
     getInfor();
+
   }, []);
 
   const handleLogin = async () => {
@@ -43,11 +57,11 @@ const LoginForm = ({ onLogin}) => {
     const validatePassword=  Validator.password(password,setPasswordError);
     if(!validateUsername && !validatePassword){
       const user = await login(username, password);
+      console.log(user);
       if(user) {
         try {
           if(isCheckRemember) {
             AsyncStorage.setItem("account", {
-              id: user.id,
               username: user.username,
               password: user.password
             });

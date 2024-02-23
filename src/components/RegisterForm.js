@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TextInput, Image, Text, Alert } from 'react-native';
+import { View, Image, Text } from 'react-native';
 import { register } from '../api/authservice/authApi';
 import CustomButton from './CustomButton';
 import { COLORS, FONTFAMILY, FONTSIZE } from '../theme/theme';
@@ -31,6 +31,7 @@ const RegisterForm = ({ onRegister }) => {
           email: email,
           phone: phone
         });
+        console.log(user);
       if(user) onRegister();      
       }
   };

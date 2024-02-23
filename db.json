@@ -7,5 +7,447 @@
       "password": "huypro123",
       "token": "ahsidahd%G1oho##*$&)hhuofa2"
     }
+  ],
+  "products": [
+    {
+      "id": "B1",
+      "name": "Robusta Beans",
+      "description": "Robusta beans are larger and more rounded than the other bean varieties. These plants typically grow much larger than Arabica plants, measuring between 15 and 20 feet. Robusta beans are typically considered to be hardier because they can grow at lower altitudes and resist diseases. But recent research suggests that they don’t handle heat as well as was previously thought.",
+      "roasted": "Medium Roasted",
+      "imagelink_square": "https://i.imgur.com/PI2OOXV.png",
+      "imagelink_portrait": "https://i.imgur.com/QuhAfUU.png",
+      "ingredients": "Africa",
+      "special_ingredient": "From Africa",
+      "prices": [
+        { "size": "250gm", "price": "5.50", "currency": "$" },
+        { "size": "500gm", "price": "10.50", "currency": "$" },
+        { "size": "1Kg", "price": "18.50", "currency": "$" }
+      ],
+      "average_rating": 4.7,
+      "ratings_count": "6,879",
+      "favourite": false,
+      "type": "Bean",
+      "index": 0
+    },
+    {
+      "id": "B2",
+      "name": "Arabica Beans",
+      "description": "Arabica beans are by far the most popular type of coffee beans, making up about 60% of the world’s coffee. These tasty beans originated many centuries ago in the highlands of Ethiopia, and may even be the first coffee beans ever consumed! The name Arabica likely comes from the beans’ popularity in 7th-century Arabia (present-day Yemen).",
+      "roasted": "Medium Roasted",
+      "imagelink_square": "https://i.imgur.com/apSKq5K.png",
+      "imagelink_portrait": "https://i.imgur.com/bHsqvRg.png",
+      "ingredients": "Africa",
+      "special_ingredient": "From Africa",
+      "prices": [
+        { "size": "250gm", "price": "5.50", "currency": "$" },
+        { "size": "500gm", "price": "10.50", "currency": "$" },
+        { "size": "1Kg", "price": "18.50", "currency": "$" }
+      ],
+      "average_rating": 4.7,
+      "ratings_count": "6,879",
+      "favourite": false,
+      "type": "Bean",
+      "index": 1
+    },
+    {
+      "id": "B3",
+      "name": "Liberica Beans",
+      "description": "Native to central and western Africa – specifically Liberia, hence its name – Coffea liberica is prized for its piquant floral aroma and bold, smoky flavor profile. Growing from a much larger plant than Arabica or Robusta, most Liberica cherries tend to be irregular in shape and closer to Robusta in size and general appearance. It’s also tolerant of hot, humid climates and does well at low altitude.",
+      "roasted": "Medium Roasted",
+      "imagelink_square": "https://i.imgur.com/RJvTAo8.png",
+      "imagelink_portrait": "https://i.imgur.com/jJF9jTL.png",
+      "ingredients": "Malaysia",
+      "special_ingredient": "From Malaysia",
+      "prices": [
+        { "size": "250gm", "price": "5.50", "currency": "$" },
+        { "size": "500gm", "price": "10.50", "currency": "$" },
+        { "size": "1Kg", "price": "18.50", "currency": "$" }
+      ],
+      "average_rating": 4.7,
+      "ratings_count": "6,879",
+      "favourite": false,
+      "type": "Bean",
+      "index": 2
+    },
+    {
+      "id": "B4",
+      "name": "Excelsa Beans",
+      "description": "Excelsa beans grow almost entirely in Southeast Asia, and they’re shaped somewhat like Liberica beans — elongated ovals. These beans grow on large 20 to 30-foot coffee plants at medium altitudes. In terms of flavor, Excelsa beans are pretty unique. They combine light roast traits like tart notes and fruity flavors with flavors that are more reminiscent of dark roasts.",
+      "roasted": "Medium Roasted",
+      "imagelink_square": "https://i.imgur.com/3nZ9zE9.png",
+      "imagelink_portrait": "https://i.imgur.com/phsURjS.png",
+      "ingredients": "Malaysia",
+      "special_ingredient": "From Malaysia",
+      "prices": [
+        { "size": "250gm", "price": "5.50", "currency": "$" },
+        { "size": "500gm", "price": "10.50", "currency": "$" },
+        { "size": "1Kg", "price": "18.50", "currency": "$" }
+      ],
+      "average_rating": 4.7,
+      "ratings_count": "6,879",
+      "favourite": false,
+      "type": "Bean",
+      "index": 3
+    },  {
+      "id": "C1",
+      "name": "Americano",
+      "description": "The Americano is another popular type of coffee drink, and it's very easy to make! It's just espresso with hot water dripping over it. The name came about during World War II when European baristas added water to their espresso drinks for the American soldiers stationed there. The resulting drink had a smoother, less concentrated flavour than espresso and thus the Americano was born.",
+      "roasted": "Medium Roasted",
+      "imagelink_square": "https://i.imgur.com/hv8Rjh2.png",
+      "imagelink_portrait": "https://i.imgur.com/20meLR1.png",
+      "ingredients": "Milk",
+      "special_ingredient": "With Steamed Milk",
+      "prices": [
+          {"size": "S", "price": "1.38", "currency": "$"},
+          {"size": "M", "price": "3.15", "currency": "$"},
+          {"size": "L", "price": "4.29", "currency": "$"}
+      ],
+      "average_rating": 4.7,
+      "ratings_count": "6,879",
+      "favourite": false,
+      "type": "Coffee",
+      "index": 0
+  },
+  {
+      "id": "C2",
+      "name": "Americano",
+      "description": "The Americano is another popular type of coffee drink, and it's very easy to make! It's just espresso with hot water dripping over it. The name came about during World War II when European baristas added water to their espresso drinks for the American soldiers stationed there. The resulting drink had a smoother, less concentrated flavour than espresso and thus the Americano was born.",
+      "roasted": "Medium Roasted",
+      "imagelink_square": "https://i.imgur.com/VoBcgvE.png",
+      "imagelink_portrait": "https://i.imgur.com/hyojB0R.png",
+      "ingredients": "Milk",
+      "special_ingredient": "With Steamed Milk",
+      "prices": [
+          {"size": "S", "price": "1.38", "currency": "$"},
+          {"size": "M", "price": "3.15", "currency": "$"},
+          {"size": "L", "price": "4.29", "currency": "$"}
+      ],
+      "average_rating": 4.7,
+      "ratings_count": "6,879",
+      "favourite": false,
+      "type": "Coffee",
+      "index": 1
+  },
+  {
+      "id": "C3",
+      "name": "Americano",
+      "description": "The Americano is another popular type of coffee drink, and it's very easy to make! It's just espresso with hot water dripping over it. The name came about during World War II when European baristas added water to their espresso drinks for the American soldiers stationed there. The resulting drink had a smoother, less concentrated flavour than espresso and thus the Americano was born.",
+      "roasted": "Medium Roasted",
+      "imagelink_square": "https://i.imgur.com/hwmaapH.png",
+      "imagelink_portrait": "https://i.imgur.com/yvdIp6m.png",
+      "ingredients": "Milk",
+      "special_ingredient": "With Steamed Milk",
+      "prices": [
+          {"size": "S", "price": "1.38", "currency": "$"},
+          {"size": "M", "price": "3.15", "currency": "$"},
+          {"size": "L", "price": "4.29", "currency": "$"}
+      ],
+      "average_rating": 4.7,
+      "ratings_count": "6,879",
+      "favourite": false,
+      "type": "Coffee",
+      "index": 2
+  },
+  {
+      "id": "C4",
+      "name": "Black Coffee",
+      "description": "Black coffee is arguably the most common type of coffee drink out there. Its popularity can be mainly attributed to how easy it is to make this beverage, be it drip, pour-over, French press, or anything else. Black coffee is usually served with no add-ins.",
+      "roasted": "Medium Roasted",
+      "imagelink_square": "https://i.imgur.com/rCaM4Bv.png",
+      "imagelink_portrait": "https://i.imgur.com/rQNx3pm.png",
+      "ingredients": "Milk",
+      "special_ingredient": "With Steamed Milk",
+      "prices": [
+          {"size": "S", "price": "1.38", "currency": "$"},
+          {"size": "M", "price": "3.15", "currency": "$"},
+          {"size": "L", "price": "4.29", "currency": "$"}
+      ],
+      "average_rating": 4.7,
+      "ratings_count": "6,879",
+      "favourite": false,
+      "type": "Coffee",
+      "index": 3
+  },
+  {
+      "id": "C5",
+      "name": "Black Coffee",
+      "description": "Black coffee is arguably the most common type of coffee drink out there. Its popularity can be mainly attributed to how easy it is to make this beverage, be it drip, pour-over, French press, or anything else. Black coffee is usually served with no add-ins.",
+      "roasted": "Medium Roasted",
+      "imagelink_square": "https://i.imgur.com/75P84Id.png",
+      "imagelink_portrait": "https://i.imgur.com/vDq9nNY.png",
+      "ingredients": "Milk",
+      "special_ingredient": "With Steamed Milk",
+      "prices": [
+          {"size": "S", "price": "1.38", "currency": "$"},
+          {"size": "M", "price": "3.15", "currency": "$"},
+          {"size": "L", "price": "4.29", "currency": "$"}
+      ],
+      "average_rating": 4.7,
+      "ratings_count": "6,879",
+      "favourite": false,
+      "type": "Coffee",
+      "index": 4
+  },
+  {
+      "id": "C6",
+      "name": "Black Coffee",
+      "description": "Black coffee is arguably the most common type of coffee drink out there. Its popularity can be mainly attributed to how easy it is to make this beverage, be it drip, pour-over, French press, or anything else. Black coffee is usually served with no add-ins.",
+      "roasted": "Medium Roasted",
+      "imagelink_square": "https://i.imgur.com/MSpw6vX.png",
+      "imagelink_portrait": "https://i.imgur.com/SEJoyG3.png",
+      "ingredients": "Milk",
+      "special_ingredient": "With Steamed Milk",
+      "prices": [
+          {"size": "S", "price": "1.38", "currency": "$"},
+          {"size": "M", "price": "3.15", "currency": "$"},
+          {"size": "L", "price": "4.29", "currency": "$"}
+      ],
+      "average_rating": 4.7,
+      "ratings_count": "6,879",
+      "favourite": false,
+      "type": "Coffee",
+      "index": 5
+  },
+  {
+    "id": "C7",
+    "name": "Latte",
+    "description": "A latte is a coffee drink made with espresso and steamed milk. The term comes from the Italian caffè e latte, meaning 'coffee and milk'. It is similar to a cappuccino but has more milk and less foam. Lattes are often flavored with syrups such as vanilla, caramel, or hazelnut.",
+    "roasted": "Medium Roasted",
+    "imagelink_square": "https://i.imgur.com/P2d6qIN.png",
+    "imagelink_portrait": "https://i.imgur.com/bSmYfRb.png",
+    "ingredients": "Milk",
+    "special_ingredient": "With Steamed Milk",
+    "prices": [
+        {"size": "S", "price": "2.00", "currency": "$"},
+        {"size": "M", "price": "3.50", "currency": "$"},
+        {"size": "L", "price": "4.50", "currency": "$"}
+    ],
+    "average_rating": 4.8,
+    "ratings_count": "8,932",
+    "favourite": false,
+    "type": "Coffee",
+    "index": 6
+},
+{
+    "id": "C8",
+    "name": "Latte",
+    "description": "A latte is a coffee drink made with espresso and steamed milk. The term comes from the Italian caffè e latte, meaning 'coffee and milk'. It is similar to a cappuccino but has more milk and less foam. Lattes are often flavored with syrups such as vanilla, caramel, or hazelnut.",
+    "roasted": "Medium Roasted",
+    "imagelink_square": "https://i.imgur.com/K3D6bXQ.png",
+    "imagelink_portrait": "https://i.imgur.com/RDcKJwm.png",
+    "ingredients": "Milk",
+    "special_ingredient": "With Steamed Milk",
+    "prices": [
+        {"size": "S", "price": "2.00", "currency": "$"},
+        {"size": "M", "price": "3.50", "currency": "$"},
+        {"size": "L", "price": "4.50", "currency": "$"}
+    ],
+    "average_rating": 4.8,
+    "ratings_count": "8,932",
+    "favourite": false,
+    "type": "Coffee",
+    "index": 7
+},
+{
+    "id": "C9",
+    "name": "Latte",
+    "description": "A latte is a coffee drink made with espresso and steamed milk. The term comes from the Italian caffè e latte, meaning 'coffee and milk'. It is similar to a cappuccino but has more milk and less foam. Lattes are often flavored with syrups such as vanilla, caramel, or hazelnut.",
+    "roasted": "Medium Roasted",
+    "imagelink_square": "https://i.imgur.com/xlFKlvG.png",
+    "imagelink_portrait": "https://i.imgur.com/gL1YyQ3.png",
+    "ingredients": "Milk",
+    "special_ingredient": "With Steamed Milk",
+    "prices": [
+        {"size": "S", "price": "2.00", "currency": "$"},
+        {"size": "M", "price": "3.50", "currency": "$"},
+        {"size": "L", "price": "4.50", "currency": "$"}
+    ],
+    "average_rating": 4.8,
+    "ratings_count": "8,932",
+    "favourite": false,
+    "type": "Coffee",
+    "index": 8
+},
+{
+    "id": "C10",
+    "name": "Espresso",
+    "description": "Espresso is a concentrated form of coffee served in small, strong shots. It's made by forcing hot water through finely-ground coffee beans, resulting in a rich, bold flavor and a layer of crema on top. Espresso is the base for many other coffee drinks.",
+    "roasted": "Dark Roasted",
+    "imagelink_square": "https://i.imgur.com/fG4tPgp.png",
+    "imagelink_portrait": "https://i.imgur.com/ZpRYTJM.png",
+    "ingredients": "Coffee Beans",
+    "special_ingredient": "Pure Coffee",
+    "prices": [
+        {"size": "S", "price": "1.50", "currency": "$"},
+        {"size": "M", "price": "2.80", "currency": "$"},
+        {"size": "L", "price": "3.90", "currency": "$"}
+    ],
+    "average_rating": 4.5,
+    "ratings_count": "5,345",
+    "favourite": false,
+    "type": "Coffee",
+    "index": 9
+},
+{
+    "id": "C11",
+    "name": "Espresso",
+    "description": "Espresso is a concentrated form of coffee served in small, strong shots. It's made by forcing hot water through finely-ground coffee beans, resulting in a rich, bold flavor and a layer of crema on top. Espresso is the base for many other coffee drinks.",
+    "roasted": "Dark Roasted",
+    "imagelink_square": "https://i.imgur.com/IGTkWH5.png",
+    "imagelink_portrait": "https://i.imgur.com/qFGBjmB.png",
+    "ingredients": "Coffee Beans",
+    "special_ingredient": "Pure Coffee",
+    "prices": [
+        {"size": "S", "price": "1.50", "currency": "$"},
+        {"size": "M", "price": "2.80", "currency": "$"},
+        {"size": "L", "price": "3.90", "currency": "$"}
+    ],
+    "average_rating": 4.5,
+    "ratings_count": "5,345",
+    "favourite": false,
+    "type": "Coffee",
+    "index": 10
+},
+{
+    "id": "C12",
+    "name": "Espresso",
+    "description": "Espresso is a concentrated form of coffee served in small, strong shots. It's made by forcing hot water through finely-ground coffee beans, resulting in a rich, bold flavor and a layer of crema on top. Espresso is the base for many other coffee drinks.",
+    "roasted": "Dark Roasted",
+    "imagelink_square": "https://i.imgur.com/hntzHEM.png",
+    "imagelink_portrait": "https://i.imgur.com/C2yIyOz.png",
+    "ingredients": "Coffee Beans",
+    "special_ingredient": "Pure Coffee",
+    "prices": [
+        {"size": "S", "price": "1.50", "currency": "$"},
+        {"size": "M", "price": "2.80", "currency": "$"},
+        {"size": "L", "price": "3.90", "currency": "$"}
+    ],
+    "average_rating": 4.5,
+    "ratings_count": "5,345",
+    "favourite": false,
+    "type": "Coffee",
+    "index": 11
+},
+{
+    "id": "C13",
+    "name": "Cappuccino",
+    "description": "A cappuccino is a coffee drink made with espresso, steamed milk, and a thick layer of foam. It originated in Italy and is traditionally served in small cups. Cappuccinos have a strong, bold flavor balanced with the creamy texture of milk foam.",
+    "roasted": "Dark Roasted",
+    "imagelink_square": "https://i.imgur.com/YeDIs3B.png",
+    "imagelink_portrait": "https://i.imgur.com/FO1CFwh.png",
+    "ingredients": "Milk",
+    "special_ingredient": "With Milk Foam",
+    "prices": [
+        {"size": "S", "price": "2.20", "currency": "$"},
+        {"size": "M", "price": "3.80", "currency": "$"},
+        {"size": "L", "price": "4.90", "currency": "$"}
+    ],
+    "average_rating": 4.6,
+    "ratings_count": "7,251",
+    "favourite": false,
+    "type": "Coffee",
+    "index": 12
+},
+{
+    "id": "C14",
+    "name": "Cappuccino",
+    "description": "A cappuccino is a coffee drink made with espresso, steamed milk, and a thick layer of foam. It originated in Italy and is traditionally served in small cups. Cappuccinos have a strong, bold flavor balanced with the creamy texture of milk foam.",
+    "roasted": "Dark Roasted",
+    "imagelink_square": "https://i.imgur.com/5pSL4k8.png",
+    "imagelink_portrait": "https://i.imgur.com/Vt0K0SR.png",
+    "ingredients": "Milk",
+    "special_ingredient": "With Milk Foam",
+    "prices": [
+        {"size": "S", "price": "2.20", "currency": "$"},
+        {"size": "M", "price": "3.80", "currency": "$"},
+        {"size": "L", "price": "4.90", "currency": "$"}
+    ],
+    "average_rating": 4.6,
+    "ratings_count": "7,251",
+    "favourite": false,
+    "type": "Coffee",
+    "index": 13
+},
+{
+    "id": "C15",
+    "name": "Cappuccino",
+    "description": "A cappuccino is a coffee drink made with espresso, steamed milk, and a thick layer of foam. It originated in Italy and is traditionally served in small cups. Cappuccinos have a strong, bold flavor balanced with the creamy texture of milk foam.",
+    "roasted": "Dark Roasted",
+    "imagelink_square": "https://i.imgur.com/R2YyLC4.png",
+    "imagelink_portrait": "https://i.imgur.com/8gF20b4.png",
+    "ingredients": "Milk",
+    "special_ingredient": "With Milk Foam",
+    "prices": [
+        {"size": "S", "price": "2.20", "currency": "$"},
+        {"size": "M", "price": "3.80", "currency": "$"},
+        {"size": "L", "price": "4.90", "currency": "$"}
+    ],
+    "average_rating": 4.6,
+    "ratings_count": "7,251",
+    "favourite": false,
+    "type": "Coffee",
+    "index": 14
+},
+{
+  "id": "C16",
+  "name": "Macchiato",
+  "description": "The word \"macchiato\" means spotted, so a macchiato espresso is an espresso with a splash of milk. Most coffee shops will top off this type of coffee drink with some foamed milk instead of just steamed milk for what's known as a traditional macchiato.",
+  "roasted": "Medium Roasted",
+  "imagelink_square": "https://i.imgur.com/vqnPmuQ.png",
+  "imagelink_portrait": "https://i.imgur.com/6D0KVXj.png",
+  "ingredients": "Milk",
+  "special_ingredient": "With Steamed Milk",
+  "prices": [
+      {"size": "S", "price": "2.50", "currency": "$"},
+      {"size": "M", "price": "4.00", "currency": "$"},
+      {"size": "L", "price": "5.20", "currency": "$"}
+  ],
+  "average_rating": 4.7,
+  "ratings_count": "6",
+  "favourite": false,
+  "type": "Coffee",
+  "index": 15
+},
+{
+  "id": "C17",
+  "name": "Macchiato",
+  "description": "The word \"macchiato\" means spotted, so a macchiato espresso is an espresso with a splash of milk. Most coffee shops will top off this type of coffee drink with some foamed milk instead of just steamed milk for what's known as a traditional macchiato.",
+  "roasted": "Medium Roasted",
+  "imagelink_square": "https://i.imgur.com/nw2n5Yh.png",
+  "imagelink_portrait": "https://i.imgur.com/Co7VQQw.png",
+  "ingredients": "Milk",
+  "special_ingredient": "With Steamed Milk",
+  "prices": [
+      {"size": "S", "price": "2.50", "currency": "$"},
+      {"size": "M", "price": "4.00", "currency": "$"},
+      {"size": "L", "price": "5.20", "currency": "$"}
+  ],
+  "average_rating": 4.7,
+  "ratings_count": "6",
+  "favourite": false,
+  "type": "Coffee",
+  "index": 16
+},
+{
+  "id": "C18",
+  "name": "Macchiato",
+  "description": "The word \"macchiato\" means spotted, so a macchiato espresso is an espresso with a splash of milk. Most coffee shops will top off this type of coffee drink with some foamed milk instead of just steamed milk for what's known as a traditional macchiato.",
+  "roasted": "Medium Roasted",
+  "imagelink_square": "https://i.imgur.com/Z4RG7XK.png",
+  "imagelink_portrait": "https://i.imgur.com/8gXVp9Y.png",
+  "ingredients": "Milk",
+  "special_ingredient": "With Steamed Milk",
+  "prices": [
+      {"size": "S", "price": "2.50", "currency": "$"},
+      {"size": "M", "price": "4.00", "currency": "$"},
+      {"size": "L", "price": "5.20", "currency": "$"}
+  ],
+  "average_rating": 4.7,
+  "ratings_count": "6",
+  "favourite": false,
+  "type": "Coffee",
+  "index": 17
+}
   ]
+  
 }

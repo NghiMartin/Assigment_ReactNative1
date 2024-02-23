@@ -1,4 +1,4 @@
-import React, { useRef, useState,useEffect } from 'react';
+import React, { useRef, useState,useEffect, useLayoutEffect, useCallback } from 'react';
 import {
   ScrollView,
   StatusBar,
@@ -9,7 +9,6 @@ import {
   View,
   ToastAndroid,
 } from 'react-native';
-import { useStore } from '../store/store';
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
 import {
   BORDERRADIUS,
@@ -23,56 +22,97 @@ import CustomIcon from '../components/CustomIcon';
 import { FlatList } from 'react-native';
 import CoffeeCard from '../components/CoffeeCard';
 import { Dimensions } from 'react-native';
+import { getAllProduct } from '../api/product/productApi';
+import { useSelector, useDispatch } from 'react-redux';
+import { addToCart, calculateCartPrice, setBeanList, setCoffeeList } from '../store/slice_control';
 
 
-const getCategoriesFromData = (data) => {
-  let temp = {};
-  for (let i = 0; i < data.length; i++) {
-    if (temp[data[i].name] == undefined) {
-      temp[data[i].name] = 1;
-    } else {
-      temp[data[i].name]++;
-    }
-  }
-  let categories = Object.keys(temp);
-  categories.unshift('All');
-  return categories;
-};
-
-const getCoffeeList = (category, data) => {
-  if (category == 'All') {
-    return data;
-  } else {
-    let coffeelist = data.filter((item) => item.name == category);
-    return coffeelist;
-  }
-};
 
 const HomeScreen = ({ navigation }) => {
-  const CoffeeList = useStore((state) => state.CoffeeList);
-  const BeanList = useStore((state) => state.BeanList);
-  const addToCart = useStore((state) => state.addToCart);
-  const calculateCartPrice = useStore((state) => state.calculateCartPrice);
+  const dispatch = useDispatch();
 
-  useEffect(() => {
-   
-}, []);
+  const CoffeeList = useSelector((state) => state.Products.CoffeeList);
+  const BeanList = useSelector((state) => state.Products.BeanList);
 
-  const [categories, setCategories] = useState(
-    getCategoriesFromData(CoffeeList)
-  );
+  const setDataCoffeeList = (arrCoffee) => dispatch(setCoffeeList(arrCoffee));
+  const setDataBeanList = (arrBean) => dispatch(setBeanList(arrBean));
+  const handleAddToCart = useCallback((cartItem) => dispatch(addToCart(cartItem)),[]);
+  const handleCalculateCartPrice = () => dispatch(calculateCartPrice());
+  // const [CoffeeList, setCoffeeList] = useState([]);
+  // const [BeanList, setBeanList] = useState([]);
+  const [dataAll,setData] = useState([]);
+
+  const addDataCoffeeList = async() => {
+    if(dataAll){
+      const dataCoffeeFilter = await dataAll?.filter((coffee) => coffee.id?.startsWith('C'));
+      setDataCoffeeList(dataCoffeeFilter);
+    }
+ 
+  }
+  const addDataBeanList = async() => {
+    if(dataAll){
+      const dataBeanFilter =  await dataAll?.filter((coffee) => coffee.id?.startsWith('B'));
+      setDataBeanList(dataBeanFilter);
+    }
+  }
+  const fechDataProduct = async () => {
+    const data = await getAllProduct();
+    if(data){
+       setData(data);
+      addDataCoffeeList();
+      addDataBeanList();
+    }
+   };
+  const getCategoriesFromData = (data) => {
+    let temp = {};
+    for (let i = 0; i < data?.length; i++) {
+      if (temp[data[i].name] == undefined) {
+        temp[data[i].name] = 1;
+      } else {
+        temp[data[i].name]++;
+      }
+    }
+    let categories = Object.keys(temp);
+    categories.unshift('All');
+    return categories;
+  };
+  const getCoffeeList = (category, data) => {
+    if (category == 'All') {
+      return data;
+    } else {
+      let coffeelist = data.filter((item) => item.name == category);
+      return coffeelist;
+    }
+  };
+
+  const categories = getCategoriesFromData(CoffeeList);
   const [searchText, setSearchText] = useState('');
   const [categoryIndex, setCategoryIndex] = useState({
     index: 0,
     category: categories[0],
   });
-  const [sortedCoffee, setSortedCoffee] = useState(
-    getCoffeeList(categoryIndex.category, CoffeeList)
-  );
+    
+    const [sortedCoffee, setSortedCoffee] = useState(getCoffeeList(categoryIndex?.category, CoffeeList));
+  
+  // //UseEffect
+  // useLayoutEffect(() => {
+  // },[]);
+  const [reloadCount, setReloadCount] = useState(0);
 
+  useEffect(() => {
+    fechDataProduct();  
+    if (reloadCount < 2) {
+      const timer = setTimeout(() => {
+        // Tăng biến đếm lên 1 sau mỗi lần load lại
+        setReloadCount(reloadCount + 1);
+      }, 10);
+
+      // Đảm bảo clear timeout khi component bị unmount
+      return () => clearTimeout(timer);
+    }
+  }, [reloadCount]);
   const ListRef = useRef();
   const tabBarHeight = useBottomTabBarHeight();
-
   const searchCoffee = (search) => {
     if (search != '') {
       ListRef?.current?.scrollToOffset({
@@ -97,7 +137,6 @@ const HomeScreen = ({ navigation }) => {
     setSortedCoffee([...CoffeeList]);
     setSearchText('');
   };
-
   const CoffeCardAddToCart = ({
     id,
     index,
@@ -108,7 +147,7 @@ const HomeScreen = ({ navigation }) => {
     type,
     prices,
   }) => {
-    addToCart({
+    handleAddToCart({
       id,
       index,
       name,
@@ -118,7 +157,7 @@ const HomeScreen = ({ navigation }) => {
       type,
       prices,
     });
-    calculateCartPrice();
+    handleCalculateCartPrice();
     ToastAndroid.showWithGravity(
       `${name} is Added to Cart`,
       ToastAndroid.SHORT,
@@ -126,6 +165,8 @@ const HomeScreen = ({ navigation }) => {
     );
   };
 
+
+  
   return (
     <View style={styles.ScreenContainer}>
       <StatusBar backgroundColor={COLORS.primaryBlackHex} />
@@ -188,13 +229,12 @@ const HomeScreen = ({ navigation }) => {
         </View>
 
         {/* Category Scroller */}
-
         <ScrollView
           horizontal
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={styles.CategoryScrollViewStyle}
         >
-          {categories.map((data, index) => (
+          {categories && categories?.map((data, index) => (
             <View key={index.toString()} style={styles.CategoryScrollViewContainer}>
               <TouchableOpacity
                 style={styles.CategoryScrollViewItem}
@@ -215,14 +255,14 @@ const HomeScreen = ({ navigation }) => {
                 <Text
                   style={[
                     styles.CategoryText,
-                    categoryIndex.index == index
+                    categoryIndex?.index == index
                       ? { color: COLORS.primaryOrangeHex }
                       : {},
                   ]}
                 >
                   {data}
                 </Text>
-                {categoryIndex.index == index ? (
+                {categoryIndex?.index == index ? (
                   <View style={styles.ActiveCategory} />
                 ) : (
                   <></>
@@ -394,53 +434,5 @@ const styles = StyleSheet.create({
 
 export default HomeScreen;
 
-// import React, { useRef, useState } from 'react';
-// import { View, Text, Button } from 'react-native';
-// import { getAllProduct } from '../api/product/productApi';
 
-// const HomeScreen = () => {
-//   const [count, setCount] = useState(10); // Giá trị khởi tạo đếm ngược
-//   const intervalRef = useRef(null); // Tham chiếu để lưu trữ id của setInterval
 
-//   // Hàm bắt đầu đếm ngược
-//   const startCountdown = async () => {
-//     // // Kiểm tra xem đếm ngược đã bắt đầu chưa
-//     // if (intervalRef.current === null) {
-//     //   // Nếu chưa bắt đầu, bắt đầu đếm ngược
-//     //   intervalRef.current = setInterval(() => {
-//     //     setCount(prevCount => prevCount - 1); // Giảm giá trị đếm ngược mỗi giây
-//     //   }, 1000);
-//     // }
-//     const data = await getAllProduct();
-//     console.log(data[0].roasted);
-//   };
-
-//   // Hàm dừng đếm ngược
-//   const stopCountdown = () => {
-//     // Kiểm tra xem đếm ngược đang chạy không
-//     if (intervalRef.current !== null) {
-//       // Nếu đếm ngược đang chạy, dừng lại
-//       clearInterval(intervalRef.current);
-//       intervalRef.current = null; // Đặt lại tham chiếu để báo hiệu rằng đếm ngược đã dừng
-//     }
-//   };
-
-//   // Hàm reset đếm ngược về giá trị ban đầu
-//   const resetCountdown = () => {
-//     setCount(10); // Đặt lại giá trị đếm ngược về giá trị ban đầu
-//     stopCountdown(); // Dừng đếm ngược nếu đang chạy
-//   };
-
-//   return (
-//     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-//       <Text style={{ fontSize: 24 }}>Countdown: {count}</Text>
-//       <View style={{ flexDirection: 'row', marginTop: 20 }}>
-//         <Button title="Start" onPress={startCountdown} />
-//         <Button title="Stop" onPress={stopCountdown} />
-//         <Button title="Reset" onPress={resetCountdown} />
-//       </View>
-//     </View>
-//   );
-// };
-
-// export default HomeScreen;
